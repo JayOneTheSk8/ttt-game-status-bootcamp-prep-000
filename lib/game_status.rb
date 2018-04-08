@@ -41,7 +41,7 @@ def won?(board)
 end
 
 def full?(board)
-  if board.include?{|space| space == " "}
+  if board.any?{|space| space == " "}
     return false
   else
     return true
