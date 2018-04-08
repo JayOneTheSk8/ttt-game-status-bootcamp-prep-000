@@ -14,3 +14,9 @@ WIN_COMBINATIONS = [
   [2, 4, 6],
   [0, 4, 8]
 ]
+
+def won?(board)
+  WIN_COMBINATIONS.select do |combo|
+    board[combo[0]] == board[combo[1]] == board[combo[2]]
+  end
+end
