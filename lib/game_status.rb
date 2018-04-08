@@ -41,5 +41,9 @@ def won?(board)
 end
 
 def full?(board)
-  
+  if board.none?{|space| space == " "}
+    return false
+  else
+    return true
+  end
 end
