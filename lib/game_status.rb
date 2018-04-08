@@ -16,6 +16,9 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
+  board.all? do |space|
+    space == " "
+  end
   WIN_COMBINATIONS.select do |combo|
     i = combo[0]
     j = combo[1]
@@ -25,7 +28,11 @@ def won?(board)
     p2 = board[j]
     p3 = board[k]
 
-    if p1 == "X" && p2 == "X" && p3 == "X"
+    if board.none?{|space| space == " "}
+      return false
+    elsif board.all?{|space| space == " "}
+      return false
+    elsif p1 == "X" && p2 == "X" && p3 == "X"
       return combo
     elsif p1 == "O" && p2 == "O" && p3 == "O"
       return combo
