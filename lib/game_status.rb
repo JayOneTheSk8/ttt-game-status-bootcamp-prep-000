@@ -16,9 +16,6 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  board.all? do |space|
-    space == " "
-  end
   WIN_COMBINATIONS.select do |combo|
     i = combo[0]
     j = combo[1]
